@@ -17,21 +17,13 @@
         android:visibility="gone"
         />
 
-    <SeekBar
-        android:id="@+id/seek1"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_below="@+id/peeButton"
-        android:max="60"
-        />
-
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="timer"
         android:id="@+id/timerButton"
         android:layout_below="@+id/seek1"
+        android:visibility="gone"
         />
 
     <TextView
@@ -42,5 +34,14 @@
         android:text="60"
         android:layout_below="@+id/timerButton"
         android:id="@+id/textView"
+        />
+
+    <SeekBar
+        android:id="@+id/seek1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/peeButton"
+        android:max="60"
         />
 </RelativeLayout>

@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show();*/
                 peeTimer = new PeeTimer(progressChanged*100,100);
                 peeTimer.start();
-                b2.startAnimation(movement);
+                sb.startAnimation(movement);
             }
         });
     }
