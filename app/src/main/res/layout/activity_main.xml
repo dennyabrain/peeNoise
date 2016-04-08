@@ -32,7 +32,6 @@
         android:text="timer"
         android:id="@+id/timerButton"
         android:layout_below="@+id/seek1"
-        android:visibility="gone"
         />
 
     <TextView

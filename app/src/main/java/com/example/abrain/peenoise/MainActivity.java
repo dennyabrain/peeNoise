@@ -3,6 +3,7 @@ package com.example.abrain.peenoise;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -15,6 +16,9 @@ import android.util.Log;
 
 import android.content.Intent;
 
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+
 public class MainActivity extends AppCompatActivity {
     Button b1;
     Button b2;
@@ -24,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
 
     private MediaPlayer mediaPlayer;
     int progressChanged;
+
+    Animation movement;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
         b2 = (Button) findViewById(R.id.timerButton);
         sb = (SeekBar) findViewById(R.id.seek1);
         tv = (TextView) findViewById(R.id.textView);
+
+        movement = AnimationUtils.loadAnimation(this, R.anim.movement);
 
         //peeTimer = new PeeTimer(5000,1000);
 
@@ -70,10 +78,11 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                Toast.makeText(MainActivity.this,"seek bar progress:"+progressChanged,
-                        Toast.LENGTH_SHORT).show();
+                /*Toast.makeText(MainActivity.this,"seek bar progress:"+progressChanged,
+                        Toast.LENGTH_SHORT).show();*/
                 peeTimer = new PeeTimer(progressChanged*100,100);
                 peeTimer.start();
+                b2.startAnimation(movement);
             }
         });
     }
@@ -94,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onFinish(){
-            Toast.makeText(MainActivity.this, "timer done", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(MainActivity.this, "timer done", Toast.LENGTH_SHORT).show();
             tv.setText("i hope you are peeing by now");
             mediaPlayer.start();
         }

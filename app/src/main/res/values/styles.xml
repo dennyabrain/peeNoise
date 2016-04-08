@@ -8,6 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textColor">@color/textColor</item>
         <item name="android:typeface">monospace</item>
+        <item name="android:windowBackground">@color/testColor</item>
+        <item name="android:colorBackground">@color/testColor</item>
+        <item name="android:textColorPrimary">#1C1D25</item>
     </style>
 
 </resources>
+
+
